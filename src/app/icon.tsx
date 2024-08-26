@@ -10,6 +10,7 @@ export const size = {
 }
 export const contentType = 'image/png'
 
+// eslint-disable-next-line unicorn/no-anonymous-default-export
 export default function () {
   return new ImageResponse(
     (

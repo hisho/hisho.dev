@@ -1,12 +1,11 @@
-import type { ReactNode } from 'react'
+import type { PropsWithChildren } from 'react'
 
 import '@/app/app.css'
-import { FRONTEND_URL } from '@/constant/constant'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   description: ``,
-  metadataBase: new URL(FRONTEND_URL),
+  metadataBase: new URL('https://hisho.dev'),
   robots: {
     follow: false,
     index: false,
@@ -17,15 +16,17 @@ export const metadata: Metadata = {
   },
 }
 
-type Props = {
-  children: ReactNode
-}
+type Props = PropsWithChildren
 
-export default function ({ children }: Props) {
+// eslint-disable-next-line unicorn/no-anonymous-default-export
+export default function (props: Props) {
+  const { children } = props
   return (
     <html>
       <head />
-      <body className={'bg-primary font-body text-write'}>{children}</body>
+      <body className={'grid min-h-svh bg-gray-800 text-white'}>
+        {children}
+      </body>
     </html>
   )
 }
