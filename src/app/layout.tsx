@@ -24,7 +24,9 @@ export default function (props: Props) {
   return (
     <html>
       <head />
-      <body>{children}</body>
+      <body className={'grid min-h-svh bg-gray-800 text-white'}>
+        {children}
+      </body>
     </html>
   )
 }
