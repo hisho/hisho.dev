@@ -10,27 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 7.12.0
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: ./.node-version
-          cache: pnpm
-          cache-dependency-path: ./pnpm-lock.yaml
+      - uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Install dependencies
-        run: pnpm install
+        run: bun install --frozen-lockfile
       - name: Run build
-        env:
-          SLACK_USERNAME: ${{ secrets.SLACK_USERNAME }}
-          SLACK_BOT_USER_OAUTH_TOKEN: ${{ secrets.SLACK_BOT_USER_OAUTH_TOKEN }}
-          SLACK_CONTACT_CHANNEL_CONVERSATION_ID: ${{ secrets.SLACK_CONTACT_CHANNEL_CONVERSATION_ID }}
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-          NEXT_PUBLIC_PORT: ${{ secrets.NEXT_PUBLIC_PORT }}
-          NEXT_PUBLIC_LOCAL_ENV: ${{ secrets.NEXT_PUBLIC_LOCAL_ENV }}
-          NEXT_PUBLIC_EMAIL_ADDRESS: ${{ secrets.NEXT_PUBLIC_EMAIL_ADDRESS }}
-          LOCAL_ENV: ${{ secrets.LOCAL_ENV }}
-        run: pnpm build
+        run: bun run build
