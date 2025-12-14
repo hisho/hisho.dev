@@ -13,22 +13,20 @@ export const contentType = 'image/png'
 // eslint-disable-next-line unicorn/no-anonymous-default-export
 export default function () {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          alignItems: 'center',
-          background: '#4ECCA3',
-          color: '#232931',
-          display: 'flex',
-          fontSize: 128,
-          height: '100%',
-          justifyContent: 'center',
-          width: '100%',
-        }}
-      >
-        Hisho.dev
-      </div>
-    ),
+    <div
+      style={{
+        alignItems: 'center',
+        background: '#4ECCA3',
+        color: '#232931',
+        display: 'flex',
+        fontSize: 128,
+        height: '100%',
+        justifyContent: 'center',
+        width: '100%',
+      }}
+    >
+      Hisho.dev
+    </div>,
     {
       ...size,
     }
