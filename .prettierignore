@@ -2,6 +2,6 @@
 .vscode
 .next
 package.json
-pnpm-lock.yaml
+bun.lockb
 node_modules
 README.md

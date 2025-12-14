@@ -13,22 +13,20 @@ export const contentType = 'image/png'
 // eslint-disable-next-line unicorn/no-anonymous-default-export
 export default function () {
   return new ImageResponse(
-    (
-      // ImageResponse JSX element
-      <div
-        style={{
-          alignItems: 'center',
-          background: 'black',
-          display: 'flex',
-          fontSize: 24,
-          height: '100%',
-          justifyContent: 'center',
-          width: '100%',
-        }}
-      >
-        🧑‍🎤
-      </div>
-    ),
+    // ImageResponse JSX element
+    <div
+      style={{
+        alignItems: 'center',
+        background: 'black',
+        display: 'flex',
+        fontSize: 24,
+        height: '100%',
+        justifyContent: 'center',
+        width: '100%',
+      }}
+    >
+      🧑‍🎤
+    </div>,
     {
       ...size,
     }

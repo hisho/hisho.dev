@@ -9,10 +9,7 @@
 /coverage
 
 # next.js
-/.next/*
-!/.next/types/
-/.next/types/*
-!/.next/types/link.d.ts
+.next/
 /out/
 
 # production
